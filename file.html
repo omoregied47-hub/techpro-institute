@@ -1,0 +1,2887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPro Institute | Computer Training & IT Solutions</title>
+    <meta name="description" content="Professional computer training, digital skills development, and technology solutions for individuals and businesses.">
+    <meta name="theme-color" content="#0284c7">
+    <link rel="canonical" href="https://techproinstitute.example.com">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="TechPro Institute | Computer Training & IT Solutions">
+    <meta property="og:description" content="Build practical digital skills and access reliable technology services designed for today's world.">
+    <meta property="og:type" content="website">
+
+    <style>
+        /* --- CSS VARIABLES & THEME SETUP --- */
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --dark: #0f172a;
+            --dark-surface: #1e293b;
+            --text: #1e293b;
+            --muted: #64748b;
+            --surface: #ffffff;
+            --background: #f8fafc;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --header-bg: rgba(255, 255, 255, 0.92);
+        }
+
+        [data-theme="dark"] {
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+            --accent: #0284c7;
+            --accent-glow: rgba(2, 132, 199, 0.3);
+            --dark: #090d16;
+            --dark-surface: #0f172a;
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --surface: #1e293b;
+            --background: #0f172a;
+            --border: #334155;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.5);
+            --header-bg: rgba(15, 23, 42, 0.92);
+        }
+
+        /* --- BASE RESET & UTILITIES --- */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-dark {
+            background-color: var(--dark);
+            color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section-dark .section-title h2 {
+            color: #ffffff;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .section-dark .section-title p {
+            color: #94a3b8;
+        }
+
+        /* --- BUTTONS & CONTROLS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 26px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.98rem;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+            outline: none;
+            white-space: nowrap;
+        }
+
+        .btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-dark-secondary {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-dark-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.18);
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--surface);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* --- HEADER & NAV --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary), #0284c7);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text);
+            border-radius: var(--radius-sm);
+        }
+
+        /* --- MOBILE NAV OVERLAY/DRAWER --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 360px;
+            height: 100vh;
+            background-color: var(--surface);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+            z-index: 1050;
+            transition: right 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: block;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .mobile-nav-links a:hover {
+            background-color: var(--background);
+            color: var(--primary);
+        }
+
+        .nav-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1040;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 160px 0 100px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            color: #ffffff;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent);
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* SVG / CSS Interactive Tech Graphic Panel */
+        .hero-visual {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .code-window {
+            background: #090d16;
+            border-radius: var(--radius-md);
+            border: 1px solid #334155;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: #1e293b;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+
+        .code-title {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-left: 10px;
+            font-family: monospace;
+        }
+
+        .code-body {
+            padding: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #38bdf8;
+            line-height: 1.7;
+        }
+
+        .code-body .keyword { color: #f472b6; }
+        .code-body .function { color: #60a5fa; }
+        .code-body .string { color: #34d399; }
+        .code-body .comment { color: #64748b; }
+
+        .floating-stat-card {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .floating-stat-card h4 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .floating-stat-card p {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        /* Hero Stats Grid */
+        .hero-stats-wrapper {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .hero-stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .hero-stat-item p {
+            font-size: 0.825rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- TRUST STRIP --- */
+        .trust-strip {
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .trust-item h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .trust-item p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 1.025rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .about-feature-item svg {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .about-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .about-card-badge {
+            background: var(--primary);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        /* --- COURSES SECTION --- */
+        .course-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            color: var(--text);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 260px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            color: var(--text);
+            outline: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+     .course-card {
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .course-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-category {
+            align-self: flex-start;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.725rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background-color: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+        }
+
+        .course-card h3 {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .course-card p {
+            color: var(--muted);
+            font-size: 0.925rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+            background-color: var(--surface);
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 32px;
+            border-radius: var(--radius-md);
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .service-icon-box {
+            width: 52px;
+            height: 52px;
+            background-color: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        /* --- WHY CHOOSE US --- */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .why-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 0.925rem;
+        }
+
+        /* --- PROCESS TIMELINE --- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            position: relative;
+        }
+
+        .process-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            position: relative;
+        }
+
+        .process-step {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .process-card h3 {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- FEE ESTIMATOR --- */
+        .estimator-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .estimator-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background-color: var(--background);
+            color: var(--text);
+            outline: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+
+        .estimate-output-box {
+            background: linear-gradient(135deg, var(--dark), var(--dark-surface));
+            color: #ffffff;
+            padding: 35px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .estimate-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+        }
+
+        .estimate-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 12px 0;
+        }
+
+        .estimate-disclaimer {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* --- TESTIMONIALS CAROUSEL --- */
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .testimonial-quote {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .avatar-placeholder {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .author-info p {
+            font-size: 0.825rem;
+            color: var(--muted);
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .carousel-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background-color: var(--primary);
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* --- FAQ SECTION (ACCORDION) --- */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+        }
+
+        .faq-header {
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-header svg {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-header svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-body {
+            padding: 0 24px 20px 24px;
+            max-height: 250px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 50px;
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background-color: rgba(2, 132, 199, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--muted);
+            font-size: 0.925rem;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-form-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* --- MODAL SYSTEM --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            padding-right: 30px;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            font-weight: 800;
+        }
+
+        .modal-body {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .modal-body ul {
+            margin: 16px 0 20px 20px;
+        }
+
+        .modal-footer {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        /* --- TOAST NOTIFICATION SYSTEM --- */
+        .toast-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background-color: var(--dark);
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            pointer-events: auto;
+            animation: toastIn 0.3s ease forwards;
+            border-left: 4px solid var(--primary);
+        }
+
+        .toast.success { border-left-color: #10b981; }
+        .toast.error { border-left-color: #ef4444; }
+
+        @keyframes toastIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark);
+            color: #94a3b8;
+            padding: 70px 0 30px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand p {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+        }
+
+        /* --- BACK TO TOP BUTTON --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 900;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            background-color: var(--primary-dark);
+        }
+
+        /* --- SCROLL ANIMATION CLASS --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-on-scroll {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .estimator-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-stats-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            .hero {
+                padding: 130px 0 60px 0;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+  .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stats-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            .course-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="TechPro Institute Homepage">
+                <div class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                TechPro <span>Institute</span>
+            </a>
+
+            <nav aria-label="Desktop Navigation">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <a href="#courses" class="btn btn-primary" style="display: none; @media(min-width: 768px){display: inline-flex;}">Enroll Now</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open mobile menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <div class="mobile-nav-header">
+            <span class="logo" style="font-size: 1.2rem;">TechPro <span>Institute</span></span>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#estimator">Fee Estimator</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div style="margin-top: auto; padding-top: 20px;">
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">Get in Touch</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            Learn. Build. Grow.
+                        </div>
+                        <h1>Professional Computer Training & <span>Technology Solutions</span></h1>
+                        <p>Build practical digital skills and access reliable technology services designed for individuals, businesses, and organizations.</p>
+                        <div class="hero-actions">
+                            <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                            <a href="#contact" class="btn btn-dark-secondary">Get a Quote</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <div class="code-dot dot-red"></div>
+                                <div class="code-dot dot-yellow"></div>
+                                <div class="code-dot dot-green"></div>
+                                <span class="code-title">techpro-system.js</span>
+                            </div>
+                            <div class="code-body">
+                                <span class="comment">// Practical Technology Ecosystem</span><br>
+                                <span class="keyword">const</span> institute = {<br>
+                                &nbsp;&nbsp;name: <span class="string">'TechPro Institute'</span>,<br>
+                                &nbsp;&nbsp;skills: [<span class="string">'Office Admin'</span>, <span class="string">'Web Dev'</span>, <span class="string">'Data'</span>],<br>
+                                &nbsp;&nbsp;services: [<span class="string">'IT Solutions'</span>, <span class="string">'Branding'</span>],<br>
+                                &nbsp;&nbsp;<span class="function">empower</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">'Practical hands-on success'</span>;<br>
+                                &nbsp;&nbsp;}<br>
+                                };
+                            </div>
+                        </div>
+                        <div class="floating-stat-card">
+                            <div class="trust-icon" style="background: rgba(56, 189, 248, 0.2); color: var(--accent);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div>
+                                <h4>100% Practical</h4>
+                                <p>Project-based Curriculum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HERO STATISTICS (Demonstration values) -->
+                <div class="hero-stats-wrapper">
+                    <div class="hero-stat-item">
+                        <h3>1,500+</h3>
+                        <p>Students Trained</p>
+                    </div>
+                    <div class="hero-stat-item">
+                        <h3>20+</h3>
+                        <p>Professional Courses</p>
+                    </div>
+                    <div class="hero-stat-item">
+                        <h3>250+</h3>
+                        <p>Business Clients</p>
+                    </div>
+                    <div class="hero-stat-item">
+                        <h3>5+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST STRIP -->
+        <section class="trust-strip">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        </div>
+                        <div>
+                            <h4>Practical Training</h4>
+                            <p>Hands-on skills application</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        </div>
+                        <div>
+                            <h4>Business Solutions</h4>
+                            <p>Reliable corporate IT support</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <div>
+                            <h4>Responsive Support</h4>
+                            <p>Direct assistance & mentorship</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        </div>
+                        <div>
+                            <h4>Career Focused</h4>
+                            <p>Market-relevant learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content animate-on-scroll">
+                        <h2>Technology Skills That Create Opportunities</h2>
+                        <p>TechPro Institute combines practical computer education, digital skills training, business technology services, creative branding, and technical support under one roof.</p>
+                        <p>Whether you are an individual aiming to boost your employability or a business seeking reliable digital execution, we deliver structured solutions tailored to your goals.</p>
+                        <div class="about-features">
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Practical Learning
+                            </div>
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Industry-Relevant Skills
+                            </div>
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Beginner Friendly
+                            </div>
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Business-Focused
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card animate-on-scroll">
+                        <span class="about-card-badge">Our Commitment</span>
+                        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; color: var(--text);">Bridging the Digital Gap</h3>
+                        <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 20px;">We focus on clear, step-by-step instruction without unnecessary jargon. Our learning environment is built around real projects, ensuring that knowledge translates directly into practical capability.</p>
+                        <a href="#courses" class="btn btn-secondary">Explore Programs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES SECTION -->
+        <section class="section" id="courses" style="background-color: var(--background);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Professional Training Programs</h2>
+                    <p>Upgrade your career or business skills with practical, project-based courses.</p>
+                </div>
+
+                <div class="course-controls">
+                    <div class="filter-tabs" id="filterTabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="office">Office</button>
+                        <button class="tab-btn" data-filter="programming">Programming</button>
+                        <button class="tab-btn" data-filter="design">Design</button>
+                        <button class="tab-btn" data-filter="data">Data</button>
+                        <button class="tab-btn" data-filter="business">Business</button>
+                    </div>
+
+                    <div class="search-box">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="courseSearch" placeholder="Search courses..." aria-label="Search courses">
+                    </div>
+                </div>
+
+                <div class="course-grid" id="courseContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Business & IT Services</h2>
+                    <p>Comprehensive technical and creative solutions designed to power individual and corporate operations.</p>
+                </div>
+
+                <div class="services-grid" id="servicesContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="section" id="why-us" style="background-color: var(--background);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose TechPro?</h2>
+                    <p>We combine educational quality with professional technology support to provide complete digital value.</p>
+                </div>
+
+                <div class="why-grid">
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </div>
+                        <h3>Practical Learning</h3>
+                        <p>Hands-on training focused strictly on real-world practical skills rather than pure theory.</p>
+                    </div>
+
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>Modern Curriculum</h3>
+                        <p>Courses designed around modern digital demands and current industry standards.</p>
+                    </div>
+
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h3>Flexible Learning</h3>
+                        <p>Training options structured to suit different schedules and experience levels.</p>
+                    </div>
+
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>Business Support</h3>
+                        <p>Reliable technology and creative services designed for local enterprises and organizations.</p>
+                    </div>
+
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>Friendly Guidance</h3>
+                        <p>Clear, responsive guidance before, during, and after your training programs.</p>
+                    </div>
+
+                    <div class="why-card animate-on-scroll">
+                        <div class="why-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h3>Affordable Pricing</h3>
+                        <p>Fair, transparent pricing structures for individual students and corporate clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ <!-- HOW IT WORKS (PROCESS) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How It Works</h2>
+                    <p>A simple step-by-step path to learning digital skills or requesting technical solutions.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card animate-on-scroll">
+                        <div class="process-step">01</div>
+                        <h3>Select Program or Service</h3>
+                        <p>Browse our catalog of courses or select an IT service that meets your needs.</p>
+                    </div>
+
+                    <div class="process-card animate-on-scroll">
+                        <div class="process-step">02</div>
+                        <h3>Contact Our Team</h3>
+                        <p>Reach out via phone, contact form, or direct WhatsApp for quick consultation.</p>
+                    </div>
+
+                    <div class="process-card animate-on-scroll">
+                        <div class="process-step">03</div>
+                        <h3>Get Started</h3>
+                        <p>Complete enrollment or project scoping with our structured onboarding process.</p>
+                    </div>
+
+                    <div class="process-card animate-on-scroll">
+                        <div class="process-step">04</div>
+                        <h3>Build, Learn & Grow</h3>
+                        <p>Achieve your learning goals or launch your business solution with expert backing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUSINESS SOLUTIONS CTA SECTION -->
+        <section class="section section-dark">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 16px;">Have a Business Project?</h2>
+                <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px auto;">Let's turn your idea into a practical, reliable digital solution. Contact us to discuss custom branding, web design, or network setup.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                    <a href="#contact" class="btn btn-dark-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEE ESTIMATOR -->
+        <section class="section" id="estimator">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Training Fee Estimator</h2>
+                    <p>Calculate an estimated tuition fee based on your course preferences and format.</p>
+                </div>
+
+                <div class="estimator-card">
+                    <div class="estimator-grid">
+                        <form id="estimatorForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="estCourse">Select Course</label>
+                                <select id="estCourse" class="form-control">
+                                    <!-- Populated dynamically via JS -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="estType">Training Format</label>
+                                <select id="estType" class="form-control">
+                                    <option value="physical">Physical (In-Person Classroom)</option>
+                                    <option value="online">Online (Live Virtual)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="estDuration">Pacing / Schedule</label>
+                                <select id="estDuration" class="form-control">
+                                    <option value="standard">Standard Pacing</option>
+                                    <option value="express">Express Intensive (+20%)</option>
+                                </select>
+                            </div>
+                        </form>
+
+                        <div class="estimate-output-box">
+                            <span class="estimate-label">Estimated Tuition Fee</span>
+                            <div class="estimate-price" id="estimatePrice">₦0</div>
+                            <p class="estimate-disclaimer">*Note: This is an estimated fee value for planning purposes only, not a final invoice. Registration and material fees may apply.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section" id="testimonials" style="background-color: var(--background);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Our Trainees Say</h2>
+                    <p>Feedback from individuals and business owners who have trained or worked with us.</p>
+                </div>
+
+                <div class="testimonial-slider">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="prevTestimonial" aria-label="Previous testimonial">&larr;</button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn" id="nextTestimonial" aria-label="Next testimonial">&rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find quick answers to common questions about our courses and technical services.</p>
+                </div>
+
+                <div class="faq-accordion" id="faqContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section" id="contact" style="background-color: var(--background);">
+            <div class="container">
+                <div class="contact-grid">
+                    <div>
+                        <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; color: var(--text);">Get in Touch</h2>
+                        <p style="color: var(--muted); font-size: 1rem; margin-bottom: 30px;">Have questions about registration, courses, or business solutions? Contact our administrative team today.</p>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Phone / Call</h4>
+                                    <p><a href="#" id="contactPhoneLink">+234 800 123 4567</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email Address</h4>
+                                    <p><a href="#" id="contactEmailLink">info@techpro.example.com</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Center Location</h4>
+                                    <p id="contactLocationText">Suite 12, Techpro Hub, Commercial Avenue, Lagos, Nigeria</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Opening Hours</h4>
+                                    <p>Mon - Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 30px;">
+                            <a href="#" id="whatsappBtn" target="_blank" rel="noopener noreferrer" class="btn" style="background-color: #25D366; color: #ffffff; width: 100%;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; color: var(--text);">Send Us an Inquiry</h3>
+                        <form id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" class="form-control" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" class="form-control" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number *</label>
+                                <input type="tel" id="contactPhone" class="form-control" placeholder="08012345678" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactService">Program / Service of Interest</label>
+                                <select id="contactService" class="form-control">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Course Registration">Course Registration</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Branding & Printing">Branding & Printing</option>
+                                    <option value="Computer Repairs / IT Support">Computer Repairs / IT Support</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color: #ffffff;">
+                        <div class="logo-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        TechPro <span style="color: var(--accent);">Institute</span>
+                    </a>
+                    <p>Professional computer training and reliable technology solutions for individuals, businesses, and organizations.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#services">IT Services</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Training Focus</h4>
+                    <ul class="footer-links">
+                        <li><a href="#courses">Office & Admin</a></li>
+                        <li><a href="#courses">Web Development</a></li>
+                        <li><a href="#courses">Graphic Design</a></li>
+                        <li><a href="#courses">Data Analytics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li id="footerPhone">+234 800 123 4567</li>
+                        <li id="footerEmail">info@techpro.example.com</li>
+                        <li id="footerLocation">Lagos, Nigeria</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 TechPro Institute. All rights reserved.</p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="#" onclick="alert('Privacy Policy placeholder.'); return false;" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" onclick="alert('Terms of Service placeholder.'); return false;" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    </button>
+
+    <!-- REUSABLE MODAL CONTAINER -->
+    <div class="modal-overlay" id="appModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic Content -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <button class="btn btn-secondary" id="modalCancelBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        "use strict";
+
+        // ==========================================
+        // 1. CONFIGURATION OBJECT
+        // ==========================================
+        const SITE_CONFIG = {
+            businessName: "TechPro Institute",
+            phone: "+234 800 123 4567",
+            whatsapp: "2348001234567",
+            email: "info@techpro.example.com",
+            location: "Suite 12, Techpro Hub, Commercial Avenue, Lagos, Nigeria"
+        };
+
+        // ==========================================
+        // 2. DATA OBJECTS
+        // ==========================================
+        const COURSES_DATA = [
+            {
+                id: "c1",
+                title: "Computer Basics & Office Suite",
+                category: "office",
+                badge: "Beginner Friendly",
+                description: "Master essential computer operations, Microsoft Word, Excel, and PowerPoint for professional office roles.",
+                duration: "4 Weeks",
+                level: "Beginner",
+                format: "Physical / Online",
+                fee: 35000,
+                topics: ["Windows OS & File Management", "Microsoft Word Document Design", "Microsoft Excel Data Sheets", "PowerPoint Presentation Skills", "Internet Safety & Email Communication"],
+                outcome: "Confidently operate business computers and handle corporate administrative tasks."
+            },
+            {
+                id: "c2",
+                title: "Frontend Web Development",
+                category: "programming",
+                badge: "High Demand",
+                description: "Learn to build modern, responsive, modern web applications using HTML5, CSS3, and JavaScript.",
+                duration: "8 Weeks",
+                level: "Beginner to Intermediate",
+                format: "Physical / Online",
+                fee: 75000,
+                topics: ["HTML5 Semantic Structure", "CSS3 Flexbox & Grid Layouts", "JavaScript Logic & DOM Operations", "Responsive Web Design", "Git & Deployment"],
+                outcome: "Build and launch custom, responsive websites and client user interfaces."
+            },
+            {
+                id: "c3",
+                title: "Graphic Design & Brand Identity",
+                category: "design",
+                badge: "Creative Skill",
+                description: "Master visual communication, logo design, typography, and marketing material creation.",
+                duration: "6 Weeks",
+                level: "Beginner",
+                format: "Physical / Online",
+                fee: 50000,
+                topics: ["Design Principles & Color Theory", "Logo & Vector Graphics", "Social Media Graphics", "Print Preparation (Flyers, Banners)", "Brand Identity Guidelines"],
+                outcome: "Produce professional corporate designs and brand identities for client applications."
+            },
+            {
+                id: "c4",
+                title: "Data Analysis with Excel & SQL",
+                category: "data",
+                badge: "Career Focused",
+                description: "Analyze business datasets, create interactive dashboards, and query relational databases.",
+                duration: "6 Weeks",
+                level: "Intermediate",
+                format: "Physical / Online",
+                fee: 65000,
+                topics: ["Advanced Excel Formulas & VLOOKUP", "Pivot Tables & Dynamic Charts", "SQL Database Querying", "Data Cleaning Techniques", "Business Reporting"],
+                outcome: "Transform complex raw business data into actionable strategic insights."
+            },
+            {
+                id: "c5",
+                title: "Digital Marketing & Strategy",
+                category: "business",
+                badge: "Business Growth",
+                description: "Grow brand presence using social media management, search engine optimization, and targeted ads.",
+                duration: "4 Weeks",
+                level: "Beginner",
+                format: "Physical / Online",
+                fee: 45000,
+                topics: ["Social Media Marketing", "Content Strategy & Copywriting", "SEO Fundamentals", "Paid Ad Campaigns", "Analytics & Conversion Tracking"],
+                outcome: "Plan and execute digital marketing campaigns that drive business sales."
+            },
+            {
+                id: "c6",
+                title: "Python Programming Fundamentals",
+                category: "programming",
+                badge: "Popular",
+                description: "Start coding with Python. Learn core logic, data structures, automation, and basic scripting.",
+                duration: "8 Weeks",
+                level: "Beginner",
+                format: "Physical / Online",
+                fee: 70000,
+                topics: ["Python Syntax & Variables", "Control Flow & Functions", "Data Structures (Lists, Dicts)", "File Handling & Automation", "Intro to Web Scraping"],
+                outcome: "Write functional Python scripts for automation and basic software applications."
+            }
+        ];
+
+        const SERVICES_DATA = [
+            {
+                id: "s1",
+                title: "Website & Web Application Development",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+                description: "Custom, mobile-friendly websites and internal tools for local businesses and institutions.",
+                deliverables: ["Custom Responsive Layout", "Fast Page Loading Speeds", "Contact Form Integration", "Domain & Hosting Setup Assistance"]
+            },
+            {
+                id: "s2",
+                title: "Graphic Design & Corporate Branding",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>`,
+                description: "Distinctive logo design, corporate stationery, social media kits, and brand asset packages.",
+                deliverables: ["Vector Logo Files", "Business Card & Letterhead Layouts", "Social Media Templates", "Brand Guidelines PDF"]
+            },
+            {
+                id: "s3",
+                title: "Computer Maintenance & Diagnostics",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>`,
+                description: "Comprehensive hardware repairs, OS reinstallation, virus removal, and system performance tuning.",
+                deliverables: ["System Hardware Diagnostics", "OS Clean Reinstallation", "Malware & Virus Removal", "Storage/RAM Upgrades"]
+            },
+            {
+                id: "s4",
+                title: "Local Area Network (LAN) Setup",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="6" height="6" rx="1"></rect><rect x="16" y="2" width="6" height="6" rx="1"></rect><rect x="9" y="16" width="6" height="6" rx="1"></rect><path d="M5 8v4h14V8"></path><path d="M12 12v4"></path></svg>`,
+                description: "Office network cabling, Wi-Fi router configuration, and secure network resource sharing.",
+                deliverables: ["Ethernet Cabling & Termination", "Wi-Fi Coverage Optimization", "Shared Office Printer Configuration", "Network Security Setup"]
+            },
+            {
+                id: "s5",
+                title: "Commercial Printing Services",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>`,
+                description: "Quality printing for marketing materials, office documents, event flyers, and corporate banners.",
+                deliverables: ["High-Resolution Print Quality", "Custom Paper & Material Options", "Bulk Volume Fulfillment", "Prompt Local Delivery"]
+            },
+            {
+                id: "s6",
+                title: "Digital Business Consultation",
+                icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`,
+                description: "Expert guidance on adopting modern software, hardware setups, and administrative digitizing.",
+                deliverables: ["Technology Audit Report", "Software Tool Recommendations", "Workflow Automation Planning", "Staff Digital Onboarding"]
+            }
+        ];
+
+        const TESTIMONIALS_DATA = [
+            {
+                quote: "The practical approach at TechPro helped me move from complete computer confusion to handling basic office admin and Excel tasks comfortably at my new job.",
+                name: "Amina Yusuf",
+                role: "Administrative Assistant",
+                tag: "Office Suite Graduate"
+            },
+            {
+                quote: "TechPro Institute redesigned our corporate website and set up our office network. Their technical delivery was prompt, clear, and very professional.",
+                name: "Emeka Okonkwo",
+                role: "Managing Director",
+                tag: "Business IT Client"
+            },
+            {
+                quote: "The web development program gave me real hands-on projects. I built 3 functional websites during the training, which gave me confidence.",
+                name: "Tunde Bakare",
+                role: "Junior Web Developer",
+                tag: "Frontend Graduate"
+            }
+        ];
+
+        const FAQ_DATA = [
+            {
+                q: "What courses do you offer?",
+                a: "We offer courses in Computer Basics, Office Suite, Web Development (HTML/CSS/JS), Python Programming, Graphic Design, Data Analysis, and Digital Marketing."
+            },
+            {
+                q: "Do beginners need previous computer experience?",
+                a: "No! Our foundational courses start from absolute zero. Our instructors guide you step-by-step through basic computer operations before advancing."
+            },
+            {
+                q: "Do you provide practical hands-on training?",
+                a: "Yes. Every course is 100% practical and project-driven. You spend class time actively building exercises and real projects on computer workstations."
+            },
+            {
+                q: "Do you offer business IT services?",
+                a: "Yes. In addition to training, we build custom websites, design corporate branding, perform computer hardware maintenance, and configure office networks."
+            },
+            {
+                q: "How can I register for a program?",
+                a: "You can send an inquiry through our contact form, call our administrative line directly, or click the WhatsApp button to chat with an admissions officer."
+            },
+            {
+                q: "How can I request a quote for business services?",
+                a: "Use the contact form or WhatsApp button specifying your service requirement (e.g. Website or Printing). We will review and send you a detailed proposal."
+            }
+        ];
+
+        // ==========================================
+        // 3. STATE MANAGEMENT
+        // ==========================================
+        let currentFilter = "all";
+        let searchQuery = "";
+        let currentTestimonialIndex = 0;
+
+        // ==========================================
+        // 4. DOM ELEMENTS
+        // ==========================================
+        const themeToggleBtn = document.getElementById("themeToggle");
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+        const mobileNavClose = document.getElementById("mobileNavClose");
+        const navBackdrop = document.getElementById("navBackdrop");
+        const courseContainer = document.getElementById("courseContainer");
+        const courseSearch = document.getElementById("courseSearch");
+        const filterTabs = document.getElementById("filterTabs");
+        const servicesContainer = document.getElementById("servicesContainer");
+        const estCourseSelect = document.getElementById("estCourse");
+        const estTypeSelect = document.getElementById("estType");
+        const estDurationSelect = document.getElementById("estDuration");
+        const estimatePriceEl = document.getElementById("estimatePrice");
+        const testimonialTrack = document.getElementById("testimonialTrack");
+        const prevTestimonialBtn = document.getElementById("prevTestimonial");
+        const nextTestimonialBtn = document.getElementById("nextTestimonial");
+        const carouselDots = document.getElementById("carouselDots");
+        const faqContainer = document.getElementById("faqContainer");
+        const contactForm = document.getElementById("contactForm");
+        const appModal = document.getElementById("appModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalBody = document.getElementById("modalBody");
+        const modalFooter = document.getElementById("modalFooter");
+        const modalClose = document.getElementById("modalClose");
+        const modalCancelBtn = document.getElementById("modalCancelBtn");
+        const toastContainer = document.getElementById("toastContainer");
+        const backToTopBtn = document.getElementById("backToTop");
+
+        // ==========================================
+        // 5. INITIALIZATION & BINDINGS
+        // ==========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            initSiteConfig();
+            initTheme();
+            renderCourses();
+            renderServices();
+            initEstimator();
+            renderTestimonials();
+            renderFAQ();
+            initScrollAnimations();
+            bindEvents();
+        });
+
+        // Apply config object values across DOM
+        function initSiteConfig() {
+            document.getElementById("contactPhoneLink").textContent = SITE_CONFIG.phone;
+            document.getElementById("contactPhoneLink").href = `tel:${SITE_CONFIG.phone.replace(/\s+/g, '')}`;
+            document.getElementById("contactEmailLink").textContent = SITE_CONFIG.email;
+            document.getElementById("contactEmailLink").href = `mailto:${SITE_CONFIG.email}`;
+            document.getElementById("contactLocationText").textContent = SITE_CONFIG.location;
+            document.getElementById("footerPhone").textContent = SITE_CONFIG.phone;
+            document.getElementById("footerEmail").textContent = SITE_CONFIG.email;
+            document.getElementById("footerLocation").textContent = SITE_CONFIG.location;
+            
+            const waBtn = document.getElementById("whatsappBtn");
+            waBtn.href = `https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20TechPro%20Institute,%20I%20would%20like%20to%20make%20an%20inquiry.`;
+        }
+
+        // Theme toggle logic
+        function initTheme() {
+            const savedTheme = localStorage.getItem("techpro_theme");
+            if (savedTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+            
+            themeToggleBtn.addEventListener("click", () => {
+                const currentTheme = document.documentElement.getAttribute("data-theme");
+                if (currentTheme === "dark") {
+                    document.documentElement.removeAttribute("data-theme");
+                    localStorage.setItem("techpro_theme", "light");
+                    showToast("Switched to Light Mode", "info");
+                } else {
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    localStorage.setItem("techpro_theme", "dark");
+                    showToast("Switched to Dark Mode", "info");
+                }
+            });
+        }
+
+        // ==========================================
+        // 6. EVENT BINDINGS
+        // ==========================================
+        function bindEvents() {
+            // Mobile Nav
+            hamburgerBtn.addEventListener("click", openMobileNav);
+            mobileNavClose.addEventListener("click", closeMobileNav);
+            navBackdrop.addEventListener("click", closeMobileNav);
+            document.querySelectorAll(".mobile-nav-links a").forEach(link => {
+                link.addEventListener("click", closeMobileNav);
+            });
+
+            // Course Search & Filter
+            courseSearch.addEventListener("input", (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                renderCourses();
+            });
+
+            filterTabs.addEventListener("click", (e) => {
+                if (e.target.classList.contains("tab-btn")) {
+                    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+                    e.target.classList.add("active");
+                    currentFilter = e.target.getAttribute("data-filter");
+                    renderCourses();
+                }
+            });
+
+            // Estimator events
+            estCourseSelect.addEventListener("change", calculateFee);
+            estTypeSelect.addEventListener("change", calculateFee);
+            estDurationSelect.addEventListener("change", calculateFee);
+
+            // Testimonial Controls
+            prevTestimonialBtn.addEventListener("click", () => navigateTestimonial(-1));
+            nextTestimonialBtn.addEventListener("click", () => navigateTestimonial(1));
+
+            // Form Submit
+            contactForm.addEventListener("submit", handleFormSubmit);
+
+            // Modal Closes
+            modalClose.addEventListener("click", closeModal);
+            modalCancelBtn.addEventListener("click", closeModal);
+            appModal.addEventListener("click", (e) => {
+                if (e.target === appModal) closeModal();
+            });
+
+   // ESC Key listener
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    closeMobileNav();
+                    closeModal();
+                }
+            });
+
+            // Back to top scroll listener
+            window.addEventListener("scroll", handleScroll);
+            backToTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        // ==========================================
+        // 7. MOBILE NAVIGATION LOGIC
+        // ==========================================
+        function openMobileNav() {
+            mobileNav.classList.add("active");
+            navBackdrop.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.remove("active");
+            navBackdrop.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        // ==========================================
+        // 8. COURSES LOGIC
+        // ==========================================
+        function renderCourses() {
+            const filtered = COURSES_DATA.filter(course => {
+                const matchesFilter = currentFilter === "all" || course.category === currentFilter;
+                const matchesSearch = course.title.toLowerCase().includes(searchQuery) ||
+                                      course.description.toLowerCase().includes(searchQuery);
+                return matchesFilter && matchesSearch;
+            });
+
+            courseContainer.innerHTML = "";
+
+            if (filtered.length === 0) {
+                courseContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>No courses found</h3>
+                        <p style="margin-top: 8px;">Try another search term or select a different category filter.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(course => {
+                const card = document.createElement("article");
+                card.className = "course-card animate-on-scroll";
+                card.innerHTML = `
+                    <div class="course-body">
+                        <span class="course-category">${escapeHTML(course.badge)}</span>
+                        <h3>${escapeHTML(course.title)}</h3>
+                        <p>${escapeHTML(course.description)}</p>
+                        <div class="course-meta">
+                            <span>⏱ ${escapeHTML(course.duration)}</span>
+                            <span>📊 ${escapeHTML(course.level)}</span>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button class="btn btn-secondary" style="width: 100%; font-size: 0.875rem;" onclick="openCourseModal('${course.id}')">View Course Details &rarr;</button>
+                        </div>
+                    </div>
+                `;
+                courseContainer.appendChild(card);
+            });
+
+            // Re-init scroll observer for new items
+            observeElements();
+        }
+
+        function openCourseModal(courseId) {
+            const course = COURSES_DATA.find(c => c.id === courseId);
+            if (!course) return;
+
+            modalTitle.textContent = course.title;
+            modalBody.innerHTML = `
+                <div style="margin-bottom: 16px;">
+                    <span class="course-category">${escapeHTML(course.badge)}</span>
+                    <span style="font-size: 0.85rem; color: var(--muted); margin-left: 10px;">Duration: <strong>${escapeHTML(course.duration)}</strong></span>
+                </div>
+                <p><strong>Description:</strong> ${escapeHTML(course.description)}</p>
+                <p style="margin-top: 14px;"><strong>Key Learning Modules:</strong></p>
+                <ul>
+                    ${course.topics.map(t => `<li>${escapeHTML(t)}</li>`).join('')}
+                </ul>
+                <p><strong>Expected Outcome:</strong> ${escapeHTML(course.outcome)}</p>
+                <div style="background-color: var(--background); padding: 14px; border-radius: var(--radius-sm); margin-top: 20px; text-align: center;">
+                    <span style="font-size: 0.9rem; color: var(--muted);">Standard Tuition Fee:</span>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">₦${course.fee.toLocaleString()}</div>
+                </div>
+            `;
+
+            modalFooter.innerHTML = `
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                <a href="#contact" class="btn btn-primary" onclick="closeModal(); selectContactService('${escapeHTML(course.title)}');">Enroll in Course</a>
+            `;
+
+            openModal();
+        }
+
+        // ==========================================
+        // 9. SERVICES LOGIC
+        // ==========================================
+        function renderServices() {
+            servicesContainer.innerHTML = "";
+
+            SERVICES_DATA.forEach(service => {
+                const card = document.createElement("article");
+                card.className = "service-card animate-on-scroll";
+                card.innerHTML = `
+                    <div class="service-icon-box">${service.icon}</div>
+                    <h3>${escapeHTML(service.title)}</h3>
+                    <p>${escapeHTML(service.description)}</p>
+                    <div>
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 0.875rem;" onclick="openServiceModal('${service.id}')">Learn More &rarr;</button>
+                    </div>
+                `;
+                servicesContainer.appendChild(card);
+            });
+        }
+
+        function openServiceModal(serviceId) {
+            const service = SERVICES_DATA.find(s => s.id === serviceId);
+            if (!service) return;
+
+            modalTitle.textContent = service.title;
+            modalBody.innerHTML = `
+                <p style="margin-bottom: 16px;">${escapeHTML(service.description)}</p>
+                <p><strong>Typical Service Deliverables:</strong></p>
+                <ul>
+                    ${service.deliverables.map(d => `<li>${escapeHTML(d)}</li>`).join('')}
+                </ul>
+            `;
+
+            modalFooter.innerHTML = `
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                <a href="#contact" class="btn btn-primary" onclick="closeModal(); selectContactService('${escapeHTML(service.title)}');">Request Service</a>
+            `;
+
+            openModal();
+        }
+
+        function selectContactService(title) {
+            const contactSelect = document.getElementById("contactService");
+            let matched = false;
+            for (let option of contactSelect.options) {
+                if (option.value.toLowerCase().includes(title.toLowerCase()) || title.toLowerCase().includes(option.value.toLowerCase())) {
+                    option.selected = true;
+                    matched = true;
+                    break;
+                }
+            }
+            if (!matched) {
+                contactSelect.value = "General Inquiry";
+            }
+        }
+
+        // ==========================================
+        // 10. FEE ESTIMATOR LOGIC
+        // ==========================================
+        function initEstimator() {
+            estCourseSelect.innerHTML = "";
+            COURSES_DATA.forEach(course => {
+                const opt = document.createElement("option");
+                opt.value = course.id;
+                opt.textContent = `${course.title} (Base: ₦${course.fee.toLocaleString()})`;
+                estCourseSelect.appendChild(opt);
+            });
+            calculateFee();
+        }
+
+        function calculateFee() {
+            const selectedCourseId = estCourseSelect.value;
+            const course = COURSES_DATA.find(c => c.id === selectedCourseId);
+            if (!course) return;
+
+            let total = course.fee;
+
+            // Online discount (-10%)
+            if (estTypeSelect.value === "online") {
+                total *= 0.9;
+            }
+
+            // Express intensive premium (+20%)
+            if (estDurationSelect.value === "express") {
+                total *= 1.2;
+            }
+
+            estimatePriceEl.textContent = `₦${Math.round(total).toLocaleString()}`;
+        }
+
+        // ==========================================
+        // 11. TESTIMONIALS CAROUSEL
+        // ==========================================
+        function renderTestimonials() {
+            testimonialTrack.innerHTML = "";
+            carouselDots.innerHTML = "";
+
+            TESTIMONIALS_DATA.forEach((item, index) => {
+                const slide = document.createElement("div");
+                slide.className = "testimonial-card";
+                slide.innerHTML = `
+                    <p class="testimonial-quote">"${escapeHTML(item.quote)}"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar-placeholder">${item.name.charAt(0)}</div>
+                        <div class="author-info">
+                            <h4>${escapeHTML(item.name)}</h4>
+                            <p>${escapeHTML(item.role)} &bull; ${escapeHTML(item.tag)}</p>
+                        </div>
+                    </div>
+                `;
+                testimonialTrack.appendChild(slide);
+
+                const dot = document.createElement("div");
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener("click", () => goToTestimonial(index));
+                carouselDots.appendChild(dot);
+            });
+        }
+
+        function navigateTestimonial(direction) {
+            currentTestimonialIndex = (currentTestimonialIndex + direction + TESTIMONIALS_DATA.length) % TESTIMONIALS_DATA.length;
+            updateTestimonialPosition();
+        }
+
+        function goToTestimonial(index) {
+            currentTestimonialIndex = index;
+            updateTestimonialPosition();
+        }
+
+        function updateTestimonialPosition() {
+            testimonialTrack.style.transform = `translateX(-${currentTestimonialIndex * 100}%)`;
+            const dots = carouselDots.querySelectorAll(".dot");
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentTestimonialIndex);
+            });
+        }
+ // ==========================================
+        // 12. FAQ ACCORDION LOGIC
+        // ==========================================
+        function renderFAQ() {
+            faqContainer.innerHTML = "";
+            FAQ_DATA.forEach((item, index) => {
+                const faqItem = document.createElement("div");
+                faqItem.className = `faq-item ${index === 0 ? 'active' : ''}`;
+                faqItem.innerHTML = `
+                    <button class="faq-header" aria-expanded="${index === 0}">
+                        <span>${escapeHTML(item.q)}</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-body">
+                        <p>${escapeHTML(item.a)}</p>
+                    </div>
+                `;
+
+                const headerBtn = faqItem.querySelector(".faq-header");
+                headerBtn.addEventListener("click", () => {
+                    const isActive = faqItem.classList.contains("active");
+                    // Close others
+                    document.querySelectorAll(".faq-item").forEach(el => {
+                        el.classList.remove("active");
+                        el.querySelector(".faq-header").setAttribute("aria-expanded", "false");
+                    });
+
+                    if (!isActive) {
+                        faqItem.classList.add("active");
+                        headerBtn.setAttribute("aria-expanded", "true");
+                    }
+                });
+
+                faqContainer.appendChild(faqItem);
+            });
+        }
+
+        // ==========================================
+        // 13. FORM HANDLING & VALIDATION
+        // ==========================================
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("contactName").value.trim();
+            const email = document.getElementById("contactEmail").value.trim();
+            const phone = document.getElementById("contactPhone").value.trim();
+            const message = document.getElementById("contactMessage").value.trim();
+
+            if (!name || !email || !phone || !message) {
+                showToast("Please fill in all required form fields.", "error");
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                showToast("Please enter a valid email address.", "error");
+                return;
+            }
+
+            // Client-side demonstration success
+            showToast("✓ Inquiry submitted successfully! Our team will contact you shortly.", "success");
+            contactForm.reset();
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // ==========================================
+        // 14. MODAL SYSTEM
+        // ==========================================
+        function openModal() {
+            appModal.classList.add("active");
+            appModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            appModal.classList.remove("active");
+            appModal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        // ==========================================
+        // 15. TOAST NOTIFICATIONS
+        // ==========================================
+        function showToast(message, type = "info") {
+            const toast = document.createElement("div");
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+
+            toastContainer.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                toast.style.transform = "translateX(100%)";
+                toast.style.transition = "all 0.3s ease";
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // ==========================================
+        // 16. SCROLL ANIMATIONS & BACK TO TOP
+        // ==========================================
+        function handleScroll() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add("visible");
+            } else {
+                backToTopBtn.classList.remove("visible");
+            }
+            updateActiveNavLink();
+        }
+
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll("section[id]");
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(sec => {
+                const top = sec.offsetTop;
+                const height = sec.offsetHeight;
+                const id = sec.getAttribute("id");
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll(".nav-link").forEach(link => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${id}`) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
+            });
+        }
+
+        function initScrollAnimations() {
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animated");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll(".animate-on-scroll").forEach(el => observer.observe(el));
+            } else {
+                // Fallback for older browsers
+                document.querySelectorAll(".animate-on-scroll").forEach(el => el.classList.add("animated"));
+            }
+        }
+
+        function observeElements() {
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animated");
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll(".animate-on-scroll:not(.animated)").forEach(el => observer.observe(el));
+            }
+        }
+
+        // ==========================================
+        // UTILITY FUNCTIONS
+        // ==========================================
+        function escapeHTML(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
